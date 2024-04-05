@@ -243,6 +243,7 @@ variable "s3_bucket_lifecycle_rules_logging" {
   }))
   default = {
     default_rule = {
+      lifecycle_configuration_rule_name = "lifecycle_configuration_rule_name"
       status = false
     }
   }
@@ -265,7 +266,7 @@ variable "s3_bucket_lifecycle_rules_tfstate" {
     enable_current_object_expiration  = optional(bool, false)
     enable_intelligent_tiering        = optional(bool, false)
     enable_glacier_ir                 = optional(bool, false)
-    lifecycle_configuration_rule_name = optional(string, "lifecycle_configuration_rule_name")
+    lifecycle_configuration_rule_name = string
     standard_transition_days          = optional(number, 30)
     glacier_transition_days           = optional(number, 60)
     deeparchive_transition_days       = optional(number, 150)
@@ -276,6 +277,7 @@ variable "s3_bucket_lifecycle_rules_tfstate" {
   }))
   default = {
     default_rule = {
+      lifecycle_configuration_rule_name = "lifecycle_configuration_rule_name"
       status = false
     }
   }
